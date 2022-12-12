@@ -1,0 +1,342 @@
+* {
+    /* transition: .05s all !important; */
+    /* font-family: 'Google Sans'; */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/* 
+.container::-webkit-scrollbar {
+    scrollbar-width: 5px;
+overflow-x: hidden;
+overflow-y: scroll;
+}
+
+*/
+.arco-input-wrapper,
+.arco-select-view-single {
+    background: #F6F8FC;
+    border: 2px solid #F6F8FC;
+    border-radius: 10px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.arco-list-item {
+    transition: .2s;
+}
+
+.arco-list-item:hover {
+    background: rgba(0, 0, 0, .06);
+}
+
+.arco-list {
+    border-radius: 10px;
+}
+
+.margin-top-20px {
+    margin-top: 20px;
+}
+
+.shadow-blue {
+    box-shadow: 0px 5px 12.35px 0.65px rgba(0, 120, 255, 0.32);
+    -webkit-box-shadow: 0px 5px 12.35px 0.65px rgba(0, 120, 255, 0.32);
+}
+
+.arco-alert {
+    border-radius: 10px;
+}
+
+
+.arco-textarea-wrapper {
+    border-radius: 10px;
+    background: #F6F8FC;
+    border: 2px solid #F6F8FC;
+}
+
+body {
+
+    -webkit-app-region: drag;
+}
+
+
+.arco-btn,
+.arco-btn[type='button'] {
+    border-radius: 10px;
+}
+
+.arco-btn-shape-circle {
+    border-radius: 50% !important;
+}
+
+.margin-top-8px {
+    margin-top: 8px;
+}
+
+.arco-input-wrapper:hover,
+.arco-textarea-wrapper:hover {
+    background: #F6F8FC;
+    border: 2px solid #0078ff;
+}
+
+.bg-blue {
+    background-color: #0078ff !important;
+    color: #FFF !important;
+}
+
+.arco-dropdown,
+.arco-select-dropdown {
+    border-radius: 10px;
+    border: none;
+}
+
+.arco-dropdown-option:hover {
+    background: #edf1f9 !important;
+}
+
+/* .theme-dark .navbar {
+    background: #36363A;
+    color: #fff;
+}
+
+body.theme-dark,
+.theme-dark #app,
+.theme-dark .container {
+    background: #202123;
+    color: #FFFFFF;
+}
+
+.theme-dark .nav-list-item-active,
+.theme-dark .nav-list-item:hover,
+.theme-dark .arco-dropdown-option:hover {
+    color: #FFF;
+    background: #292c36 !important;
+    font-weight: bold;
+}
+
+.theme-dark .arco-input-wrapper:hover,
+.theme-dark .arco-textarea-wrapper:hover {
+    background: #292c36 !important;
+    border: 2px solid #0078ff;
+}
+
+.theme-dark .arco-textarea-wrapper {
+    background: #292c36;
+    border: 2px solid #292c36;
+}
+
+.theme-dark .arco-input-wrapper,
+.theme-dark .arco-select-view-single {
+    background: #292c36;
+    border: 2px solid #292c36;
+    border-radius: 10px;
+    height: 40px;
+    font-weight: bold;
+} */
+body,
+#app,
+.container {
+    background: #FFF !important;
+    color: #000 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        background: #36363A !important;
+        color: #fff !important;
+    }
+
+    body,
+    #app,
+    .container {
+        background: #202123 !important;
+        color: #FFFFFF !important;
+    }
+
+    .arco-input-wrapper,
+    .arco-select-view-single {
+        background: #292c36 !important;
+        border: 2px solid #292c36 !important;
+        border-radius: 10px;
+        height: 40px;
+        color: #FFF;
+        font-weight: bold;
+    }
+
+    .nav-list-item-active,
+    .nav-list-item:hover,
+    .arco-dropdown-option:hover {
+        color: #FFF !important;
+        background: #292c36 !important;
+        font-weight: bold !important;
+    }
+
+    .arco-input-wrapper:hover,
+    .arco-textarea-wrapper:hover {
+        background: #292c36 !important;
+        border: 2px solid #0078ff !important;
+    }
+
+    .arco-dropdown,
+    .arco-select-dropdown {
+        background-color: #292c36 !important;
+        color: #FFF !important;
+    }
+
+    .arco-select-option {
+        background-color: #292c36 !important;
+        color: #FFF !important;
+    }
+
+    .arco-dropdown-option {
+        color: #FFF !important;
+    }
+
+    .arco-textarea-wrapper {
+        color: #FFF;
+        background: #292c36 !important;
+        border: 2px solid #292c36 !important;
+    }
+}
+
+.arco-input-wrapper:focus-within,
+.arco-input-wrapper.arco-input-focus,
+.arco-textarea-wrapper:focus-within,
+.arco-textarea-wrapper.arco-textarea-focus {
+    border: 2px solid #0078ff !important;
+}
+
+.container {
+    position: fixed;
+    top: 10px;
+    left: 270px;
+    height: 100%;
+    width: calc(100% - 270px);
+    overflow: scroll;
+    z-index: 3;
+    padding: 10px 10px;
+}
+
+header {}
+
+.header-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header-operate {
+    margin: -10px 0 15px 0;
+}
+
+.header-operate>div {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.header-operate>button {
+    margin-right: 10px;
+}
+
+.nav-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.nav-list div {
+    display: inline;
+}
+
+.nav-list-item-icon {
+    float: left;
+    padding-left: 20px;
+}
+
+.nav-list-item-title {
+    padding-left: 15px;
+}
+
+.nav-list-item {
+    font-size: 16px;
+    list-style: none;
+    height: 50px;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 15px;
+    margin-top: 5px;
+    line-height: 50px;
+    transition: .5s all;
+}
+
+.nav-list-item-active {
+    color: #000;
+    background: #edf1f9;
+    font-weight: bold;
+}
+
+.nav-list-item:hover {
+    transition: .5s all;
+    background: #edf1f9;
+}
+
+.nav-operate {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: calc(100% - 30px);
+    text-align: left;
+    -webkit-app-region: drag;
+}
+
+.nav-operate div {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border-radius: 1000px;
+    margin-right: 6px;
+    transition: .5s all;
+}
+
+.nav-operate div:hover {
+    cursor: pointer;
+    opacity: .6;
+    transition: .5s all;
+}
+
+.nav-operate-min {
+    background: #FCBC2F;
+    position: fixed;
+    top: 20px;
+    left: 43px;
+}
+
+.nav-operate-close {
+    background: #FA5F58;
+    position: fixed;
+    top: 20px;
+    left: 25px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.table-operate {
+    margin-top: -30px;
+    float: left;
+}

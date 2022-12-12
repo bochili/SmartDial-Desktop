@@ -3,17 +3,42 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "serve": "vue-cli-service electron:serve",
+    "build": "vue-cli-service build",
+    "electron:build": "vue-cli-service electron:build",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "rebuild": "electron-rebuild"
   },
+  "main": "background.js",
   "dependencies": {
+    "@electron/remote": "^2.0.9",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "electron": "^22.0.0",
+    "home-assistant-js-websocket": "^8.0.1",
+    "ip": "^2.0.0",
+    "live-server": "^1.2.2",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "pinia": "^2.0.23",
+    "rebuild": "^0.1.2",
+    "robotjs": "^0.6.0",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
+    "@arco-design/web-vue": "^2.39.1",
     "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "electron": "^13.0.0",
+    "electron-devtools-installer": "^3.1.0",
+    "electron-rebuild": "^3.2.9",
     "stylus": "^0.55.0",
-    "stylus-loader": "^6.1.0"
-  }
+    "stylus-loader": "^6.1.0",
+    "vue-cli-plugin-electron-builder": "~2.1.1",
+    "vue-cli-plugin-pinia": "~0.2.1"
+  },
+  "extraResources": [
+    "./node_modules/@electron/remote/**"
+  ]
 }

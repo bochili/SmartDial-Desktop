@@ -1,0 +1,116 @@
+[
+  {
+    "name": "窗口控制",
+    "order": 0,
+    "keyPolicy": [
+      {
+        "name": "单击",
+        "policy": [
+          {
+            "type": "内置方法",
+            "function": "toggleWindow"
+          }
+        ]
+      },
+      {
+        "name": "长按",
+        "policy": [
+          {
+            "name": "长按1",
+            "type": "自定义组合",
+            "timeout": 1000,
+            "step": [
+              {
+                "order": 0,
+                "type": "keyToggle",
+                "key": "tab",
+                "mode": "down",
+                "modifier": ["command"]
+              },
+              {
+                "order": 1,
+                "type": "setKeyboardDelay",
+                "value": 100
+              },
+              {
+                "order": 2,
+                "type": "keyToggle",
+                "key": "command",
+                "mode": "down"
+              },
+              {
+                "order": 3,
+                "type": "setKeyboardDelay",
+                "value": 100
+              },
+              {
+                "order": 4,
+                "type": "keyToggle",
+                "key": "tab",
+                "mode": "up",
+                "modifier": ["command"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "音乐播放控制",
+    "order": 1,
+    "keyPolicy": [
+      {
+        "name": "单击",
+        "policy": [
+          {
+            "type": "自定义组合",
+            "step": []
+          }
+        ]
+      },
+      {
+        "name": "长按",
+        "policy": [
+          {
+            "name": "长按1",
+            "type": "自定义组合",
+            "timeout": 1000,
+            "step": [
+              {
+                "order": 0,
+                "type": "keyToggle",
+                "key": "tab",
+                "mode": "down",
+                "modifier": ["command"]
+              },
+              {
+                "order": 1,
+                "type": "setKeyboardDelay",
+                "value": 100
+              },
+              {
+                "order": 2,
+                "type": "keyToggle",
+                "key": "command",
+                "mode": "down"
+              },
+              {
+                "order": 3,
+                "type": "setKeyboardDelay",
+                "value": 100
+              },
+              {
+                "order": 4,
+                "type": "keyToggle",
+                "key": "tab",
+                "mode": "up",
+                "modifier": ["command"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

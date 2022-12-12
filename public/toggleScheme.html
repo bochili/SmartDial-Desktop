@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #schemeList {
+        /* display: flex; */
+      }
+      .scheme-item {
+        display: inline-block;
+        width: 150px;
+        border-radius: 10px;
+        height: 80px;
+        line-height: 80px;
+        margin: 10px;
+        color: #fff;
+        text-align: center;
+        font-weight: normal;
+        transition: 0.2s all;
+        opacity: 0.2;
+      }
+      .scheme-active {
+        border: 0px solid #0078ff;
+        opacity: 1;
+        font-weight: bold;
+        background: rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="schemeList"></div>
+    <script>
+      const { ipcRenderer } = window.electron;
+      let currentActive;
+      let schemeList;
+      ipcRenderer.on("schemeList", (e, data) => {
+        console.log(data);
+        schemeList = data;
+        for (let el of data) {
+          let scheme = document.createElement("div");
+          scheme.setAttribute("class", "scheme-item");
+          scheme.innerHTML = `${el}`;
+          document.getElementById("schemeList").appendChild(scheme);
+        }
+      });
+      ipcRenderer.on("schemeListActived", (e, data) => {
+        console.log(data);
+        currentActive = data;
+        document
+          .getElementById("schemeList")
+          .childNodes[data].setAttribute("class", "scheme-item scheme-active");
+      });
+      ipcRenderer.on("left", (e, data) => {
+        console.log(currentActive);
+        if (currentActive > 0) {
+          document
+            .getElementById("schemeList")
+            .childNodes[currentActive].setAttribute("class", "scheme-item");
+          currentActive--;
+          document
+            .getElementById("schemeList")
+            .childNodes[currentActive].setAttribute(
+              "class",
+              "scheme-item scheme-active"
+            );
+          ipcRenderer.send("changeScheme", currentActive);
+        }
+      });
+      ipcRenderer.on("right", (e, data) => {
+        console.log(currentActive);
+        if (currentActive < schemeList.length - 1) {
+          document
+            .getElementById("schemeList")
+            .childNodes[currentActive].setAttribute("class", "scheme-item");
+          currentActive++;
+          document
+            .getElementById("schemeList")
+            .childNodes[currentActive].setAttribute(
+              "class",
+              "scheme-item scheme-active"
+            );
+          ipcRenderer.send("changeScheme", currentActive);
+        }
+      });
+      window.onload = () => {
+        console.log("Hello");
+      };
+    </script>
+  </body>
+</html>
